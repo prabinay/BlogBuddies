@@ -1,4 +1,4 @@
-# final_project
+# Blog_Buddies
 
 A new Flutter project.
 
