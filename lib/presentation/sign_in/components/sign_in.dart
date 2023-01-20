@@ -19,6 +19,7 @@ class _LoginPageState extends State<LoginPage> {
   String passBackData = "";
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       backgroundColor: ColorManager.KSecondaryColor,
       body: SingleChildScrollView(
@@ -33,7 +34,6 @@ class _LoginPageState extends State<LoginPage> {
                   /*decoration: BoxDecoration(
                         color: Colors.red,
                         borderRadius: BorderRadius.circular(50.0)),*/
-                  // child: Text(ImageAssets.loginIcon),
                 ),
               ),
             ),
@@ -85,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: OutlinedButton(
                   onPressed: () async {
                     passBackData =
-                          await Navigator.pushNamed(context, Routes.home)
+                        await Navigator.pushNamed(context, Routes.home)
                             as String;
                   },
                   child: const Text(
@@ -110,10 +110,26 @@ class _LoginPageState extends State<LoginPage> {
                   },
                   child: const Text(AppStrings.noAccount)),
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SocialCard(
+                  icon: ImageAssets.googleIcon,
+                  press: () {},
+                ),
+                SocialCard(
+                  icon: ImageAssets.facebookIcon,
+                  press: () {},
+                ),
+                SocialCard(
+                  icon: ImageAssets.twitterIcon,
+                  press: () {},
+                ),
+              ],
+            ),
           ],
         ),
       ),
-      
     );
   }
 }

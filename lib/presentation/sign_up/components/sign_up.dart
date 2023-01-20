@@ -17,6 +17,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -178,6 +179,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   },
                   child: const Text("Already a member? log In Now")),
             ),
+            
           ],
         ),
       ),
