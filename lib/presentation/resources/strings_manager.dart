@@ -17,7 +17,7 @@ class AppStrings {
       "Sign in with your email and password  \nor continue with social media";
   static const String rememberMe = "Remember me";
   static const String forgotPassword = "ForgotPassword";
-  static const String password = "password";
+  static const String password = "Password";
   static const String enterPassword = "Enter your password";
   static const String email = "Email";
   static const String enterEmail = "Enter your email";
@@ -30,6 +30,7 @@ class AppStrings {
   static const String loginSuccess = "Login Success";
   static const String logIn = "Log In";
   static const String forgotPass = "Forgot Password?";
+  static const String alreadyMember = "Already a member?? log In Now";
 
 
   //Error

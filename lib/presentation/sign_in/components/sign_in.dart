@@ -25,23 +25,24 @@ class _LoginPageState extends State<LoginPage> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top: 60.0),
+           const Padding(
+              padding:  EdgeInsets.only(top: 60.0),
               child: Center(
-                child: Container(
+                child: SizedBox(
                   width: 200,
                   height: 150,
                   /*decoration: BoxDecoration(
                         color: Colors.red,
                         borderRadius: BorderRadius.circular(50.0)),*/
+                        
                 ),
               ),
             ),
-            const Padding(
+            Padding(
               //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
-              padding: EdgeInsets.symmetric(horizontal: 15),
-              child: TextField(
-                decoration: InputDecoration(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: TextFormField(
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: AppStrings.email,
                     hintText: AppStrings.enterEmail),

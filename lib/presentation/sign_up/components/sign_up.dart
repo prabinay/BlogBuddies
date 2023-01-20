@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+import '../../resources/routes_manager.dart';
+
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
 
@@ -155,7 +157,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
             Container(
               margin: const EdgeInsets.only(top: 50),
-              height: 40,
+              height: 35,
               width: 250,
               decoration: BoxDecoration(
                   color: Colors.blue, borderRadius: BorderRadius.circular(20)),
@@ -173,11 +175,11 @@ class _SignUpPageState extends State<SignUpPage> {
             Center(
               child: OutlinedButton(
                   onPressed: () async {
-                    // passBackData =
-                    // await Navigator.pushNamed(context, Routes.loginScreen)
-                    // as String;
+                    passBackData =
+                    await Navigator.pushNamed(context, Routes.initialScreenRoute)
+                    as String;
                   },
-                  child: const Text("Already a member? log In Now")),
+                  child: const Text(AppStrings.alreadyMember)),
             ),
             
           ],
