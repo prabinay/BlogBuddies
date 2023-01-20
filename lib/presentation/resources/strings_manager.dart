@@ -8,9 +8,9 @@ class AppStrings {
 
   //intro screen Text
   static const String continueText = "Continue";
-  static const String introScreenText1 = "Welcome to BLog, Let’s write!";
+  static const String introScreenText1 = "Welcome to BlogBuddies, Let’s write!";
 
-  // sign in
+  // sign in and login
   static const String signIn = "Sign In";
   static const String welcomeBack = "Welcome Back";
   static const String signInPageText =
@@ -28,6 +28,9 @@ class AppStrings {
   static const String confirmPassword = "Confirm Password";
   static const String reenterYourPassword = "Re-enter your password";
   static const String loginSuccess = "Login Success";
+  static const String logIn = "Log In";
+  static const String forgotPass = "Forgot Password?";
+
 
   //Error
   static const String kEmailNullError = "Please Enter your email";
@@ -43,11 +46,13 @@ class AppStrings {
   // User Profile
   static const String profileDetails = "Profle Details";
   static const String userName = "Name";
+  static const String nameHint = "Enter your full name";
   static const String userLocation = "Location";
 
   // User Profile Private info
   static const String userEmail = "Email";
   static const String userPhone = "Contact Number";
+  static const String phonHint = "Enter valid phone number";
   static const String userAddress = "Address";
 
   // Connections

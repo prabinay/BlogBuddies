@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
+
+<defs>
+</defs>
+<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+	<circle cx="45" cy="45" r="45" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(32,196,203); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
+	<path d="M 48.601 48.545 c 5.698 -2.801 9.639 -8.649 9.639 -15.415 c 0 -9.476 -7.709 -17.185 -17.185 -17.185 S 23.871 23.654 23.871 33.13 c 0 6.925 4.126 12.89 10.041 15.609 c -7.837 1.448 -13.795 8.32 -13.795 16.57 v 9.82 c 0 1.657 1.343 3 3 3 h 37.548 c 1.657 0 3 -1.343 3 -3 v -9.82 C 63.665 56.618 57.056 49.447 48.601 48.545 z M 29.871 33.13 c 0 -6.167 5.018 -11.185 11.185 -11.185 S 52.24 26.963 52.24 33.13 c 0 6.167 -5.018 11.184 -11.185 11.184 S 29.871 39.296 29.871 33.13 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(27,167,173); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+	<path d="M 51.171 45.285 c 6.364 -2.52 10.884 -8.721 10.884 -15.971 c 0 -9.475 -7.709 -17.184 -17.184 -17.184 s -17.184 7.709 -17.184 17.184 c 0 7.272 4.548 13.488 10.942 15.993 c -8.565 0.795 -15.295 8.016 -15.295 16.785 v 9.82 c 0 1.657 1.343 3 3 3 h 37.549 c 1.657 0 3 -1.343 3 -3 v -9.82 C 66.884 53.181 59.933 45.881 51.171 45.285 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+</g>
+</svg>
