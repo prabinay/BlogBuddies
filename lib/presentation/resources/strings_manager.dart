@@ -28,9 +28,12 @@ class AppStrings {
   static const String confirmPassword = "Confirm Password";
   static const String reenterYourPassword = "Re-enter your password";
   static const String loginSuccess = "Login Success";
+
+  // login
   static const String logIn = "Log In";
   static const String forgotPass = "Forgot Password?";
   static const String alreadyMember = "Already a member?? log In Now";
+  static const String or ="-OR-";
 
 
   //Error

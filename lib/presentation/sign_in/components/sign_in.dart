@@ -25,8 +25,8 @@ class _LoginPageState extends State<LoginPage> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-           const Padding(
-              padding:  EdgeInsets.only(top: 60.0),
+            const Padding(
+              padding: EdgeInsets.only(top: 60.0),
               child: Center(
                 child: SizedBox(
                   width: 200,
@@ -34,7 +34,6 @@ class _LoginPageState extends State<LoginPage> {
                   /*decoration: BoxDecoration(
                         color: Colors.red,
                         borderRadius: BorderRadius.circular(50.0)),*/
-                        
                 ),
               ),
             ),
@@ -98,19 +97,16 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             // ),
-            const SizedBox(
+            Container(
+              margin: const EdgeInsets.only(top: 20),
               height: 50,
+              child: const Text(
+                AppStrings.or,
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.black, fontSize: 20),
+              ),
             ),
 
-            Center(
-              child: OutlinedButton(
-                  onPressed: () async {
-                    passBackData =
-                        await Navigator.pushNamed(context, Routes.signUp)
-                            as String;
-                  },
-                  child: const Text(AppStrings.noAccount)),
-            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -127,6 +123,15 @@ class _LoginPageState extends State<LoginPage> {
                   press: () {},
                 ),
               ],
+            ),
+            Center(
+              child: OutlinedButton(
+                  onPressed: () async {
+                    passBackData =
+                        await Navigator.pushNamed(context, Routes.signUp)
+                            as String;
+                  },
+                  child: const Text(AppStrings.noAccount)),
             ),
           ],
         ),
