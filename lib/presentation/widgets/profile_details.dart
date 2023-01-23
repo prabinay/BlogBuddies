@@ -12,7 +12,7 @@ class ProfileDetails extends StatelessWidget {
       body: Column(
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.fromLTRB(30, 50, 30, 30),
+            padding: EdgeInsets.fromLTRB(10, 30, 0, 0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -20,31 +20,59 @@ class ProfileDetails extends StatelessWidget {
                   margin: const EdgeInsets.only(top: 20),
                   height: 50,
                   width: 40,
-                  decoration: BoxDecoration(
-                    border: Border.all(),
-                  ),
                   child: Icon(
                     Icons.arrow_back_ios_new_outlined,
                     size: 24,
                     color: ColorManager.KPrimaryColor,
                   ),
                 ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(30, 15, 30, 30),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
                 // ignore: prefer_const_constructors
                 Text(
                   AppStrings.profileDetails,
                   style: const TextStyle(
-                      fontSize: 20, fontWeight: FontWeight.bold),
+                      fontSize: 28, fontWeight: FontWeight.bold),
                 ),
 
                 Container(
-                  height: 24,
-                  width: 24,
-                  child: OutlinedButton.icon(
-                    onPressed: () {
-                      // Respond to button press
-                    },
-                    icon: Icon(Icons.edit, size: 18),
-                    label: const Text(AppStrings.profileEdit),
+                  height: 30,
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 60,
+                        width: 70,
+                        padding: EdgeInsets.all(6.0),
+                        decoration: BoxDecoration(
+                            color: ColorManager.KPrimaryColor,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(12))),
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.edit,
+                              size: 21,
+                              color: ColorManager.KSecondaryColor,
+                            ),
+                            Container(
+                              child: Text(
+                                AppStrings.profileEdit,
+                                style: TextStyle(
+                                  color: ColorManager.KSecondaryColor,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
                   ),
                 ),
               ],
@@ -85,7 +113,7 @@ class ProfileDetails extends StatelessWidget {
           ),
           Container(
             height: 210,
-            margin: EdgeInsets.only(left: 5, right: 5),
+            margin: EdgeInsets.only(left: 15, right: 15),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(10)),
               color: ColorManager.KSecondaryColor,
@@ -153,7 +181,7 @@ class ProfileDetails extends StatelessWidget {
           ),
           Container(
             height: 210,
-            margin: EdgeInsets.only(left: 5, right: 5, top: 15),
+            margin: EdgeInsets.only(left: 15, right: 15, top: 15),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(10)),
               color: ColorManager.KSecondaryColor,
