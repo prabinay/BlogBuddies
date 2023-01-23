@@ -50,7 +50,7 @@ class StatusFull extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return StoryViewDelegate(
-              stories: snapshot.data,
+              // stories: snapshot.data, 
             );
           }
 
@@ -66,7 +66,7 @@ class StatusFull extends StatelessWidget {
             ),
           );
         },
-        future: Repository.getWhatsappStories(),
+        // future: Repository.getWhatsappStories(),
       ),
     );
   }

@@ -85,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: OutlinedButton(
                   onPressed: () async {
                     passBackData =
-                        await Navigator.pushNamed(context, Routes.home)
+                        await Navigator.pushNamed(context, Routes.homePage)
                             as String;
                   },
                   child: const Text(

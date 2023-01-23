@@ -48,12 +48,16 @@ class AppStrings {
   static const String kPhoneNumberNullError = "Please Enter your phone number";
   static const String kAddressNullError = "Please Enter your address";
   // User Profile
-  static const String profileDetails = "Profle Details";
+  static const String profileDetails = "Profile Details";
+  static const String profileEdit = "Edit";
   static const String userName = "Name";
+   static const String userRole = "Role";
+    static const String userComplay = "Company";
   static const String nameHint = "Enter your full name";
   static const String userLocation = "Location";
 
   // User Profile Private info
+    static const String privateInfo = "Private Information";
   static const String userEmail = "Email";
   static const String userPhone = "Contact Number";
   static const String phonHint = "Enter valid phone number";

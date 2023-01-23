@@ -1,5 +1,6 @@
 import 'package:final_project/presentation/resources/strings_manager.dart';
 import 'package:final_project/presentation/sign_in/components/sign_in.dart';
+import 'package:final_project/presentation/widgets/status.dart';
 
 import 'package:flutter/material.dart';
 
@@ -15,6 +16,7 @@ class Routes {
   static const String detailScreen = "/detailScreen";
   static const String profileScreen = "/profileScreen";
   static const String cart = "/cart";
+  static const String homePage = "/homePage";
 }
 
 class RouteGenerator {
@@ -26,6 +28,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const LoginPage());
       case Routes.signUp:
         return MaterialPageRoute(builder: (_) => const SignUpPage());
+      case Routes.homePage:
+        return MaterialPageRoute(builder: (_) => const Status());
       // case Routes.completeProfileScreen:
       //   return MaterialPageRoute(builder: (_) => const CompleteProfileScreen());
       // case Routes.loginSuccessScreen:

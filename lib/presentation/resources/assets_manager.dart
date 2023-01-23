@@ -8,4 +8,8 @@ class ImageAssets{
   static const String twitterIcon = "$iconPath/twitter.svg";
   static const String facebookIcon = "$iconPath/facebook.svg";
   static const String loginIcon = "$iconPath/login_user.svg";
+
+  static const String profilePic = "$imagePath/deadpool.png";
+
 }
+
