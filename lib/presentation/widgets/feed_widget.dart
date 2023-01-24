@@ -1,10 +1,12 @@
+import 'package:final_project/presentation/resources/assets_manager.dart';
+import 'package:final_project/presentation/resources/color_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../models/homepage.dart';
+import '../../models/home_page.dart';
 
 class FeedUI extends StatelessWidget {
-    final PostModel? post;
+  final PostModel? post;
 
   const FeedUI({super.key, this.post});
 
@@ -15,7 +17,7 @@ class FeedUI extends StatelessWidget {
         Row(
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 18.0, top: 10),
+              padding: const EdgeInsets.only(left: 18.0, top: 20),
               child: Material(
                 elevation: 10,
                 borderRadius: BorderRadius.circular(140),
@@ -36,11 +38,11 @@ class FeedUI extends StatelessWidget {
                           decoration: BoxDecoration(
                               border: Border.all(color: Colors.white, width: 2),
                               borderRadius: BorderRadius.circular(140)),
-                          child:  CircleAvatar(
-                            backgroundImage: NetworkImage(
-                             post!.img?? 'https://img.freepik.com/free-photo/portrait-dark-skinned-cheerful-woman-with-curly-hair-touches-chin-gently-laughs-happily-enjoys-day-off-feels-happy-enthusiastic-hears-something-positive-wears-casual-blue-turtleneck_273609-43443.jpg?w=2000',
-                            ),
-                          )),
+                          child: CircleAvatar(
+                              backgroundImage: NetworkImage(
+                            post!.img ??
+                                'https://img.freepik.com/free-photo/portrait-dark-skinned-cheerful-woman-with-curly-hair-touches-chin-gently-laughs-happily-enjoys-day-off-feels-happy-enthusiastic-hears-something-positive-wears-casual-blue-turtleneck_273609-43443.jpg?w=2000',
+                          ))),
                     ],
                   ),
                 ),
@@ -50,9 +52,9 @@ class FeedUI extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 15.0, top: 13),
                 child: Text(
-                 post!.name?? 'Sound Byte',
+                  post!.name ?? 'Sound Byte',
                   style: GoogleFonts.lato(
-                      color: Colors.grey[700],
+                      color: ColorManager.KTextColor,
                       fontSize: 16,
                       letterSpacing: 1,
                       fontWeight: FontWeight.bold),
@@ -77,10 +79,10 @@ class FeedUI extends StatelessWidget {
           child: Text(
             'Was great meeting up with Anna Ferguson and Dave Bishop at the breakfast talk!',
             style: GoogleFonts.lato(
-                color: Colors.grey[600],
+                color: ColorManager.KTextColor,
                 fontSize: 15,
                 letterSpacing: 1,
-                fontWeight: FontWeight.normal),
+                fontWeight: FontWeight.w300),
             textAlign: TextAlign.justify,
           ),
         ),
@@ -93,7 +95,7 @@ class FeedUI extends StatelessWidget {
                 borderRadius: const BorderRadius.all(
                   Radius.circular(10),
                 ),
-                child: Image.network(
+                child: Image.network(post!.img ??
                     'https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'),
               )),
         ),
@@ -107,37 +109,37 @@ class FeedUI extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(right: 5.0),
                     child: Image.asset(
-                      'assets/icons/like.png',
-                      height: 35,
-                    ),
-                  ),
-                  // Text(
-                  //   '45',
-                  //   style: GoogleFonts.averageSans(
-                  //       color: Colors.grey[700],
-                  //       fontSize: 22,
-                  //       letterSpacing: 1,
-                  //       fontWeight: FontWeight.normal),
-                  // ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 18, right: 22.0),
-              child: Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(right: 1.0),
-                    child: Image.network(
-                      'https://aux.iconspalace.com/uploads/comment-icon-256.png',
-                      height: 40,
+                      ImageAssets.likeIcon,
+                      height: 30,
                     ),
                   ),
                   Text(
                     '45',
                     style: GoogleFonts.averageSans(
                         color: Colors.grey[700],
-                        fontSize: 22,
+                        fontSize: 20,
+                        letterSpacing: 1,
+                        fontWeight: FontWeight.normal),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 10, right: 22.0),
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(right: 1.0),
+                    child: Image.network(
+                      'https://aux.iconspalace.com/uploads/comment-icon-256.png',
+                      height: 30,
+                    ),
+                  ),
+                  Text(
+                    '45',
+                    style: GoogleFonts.averageSans(
+                        color: ColorManager.KTextColor,
+                        fontSize: 20,
                         letterSpacing: 1,
                         fontWeight: FontWeight.normal),
                   ),

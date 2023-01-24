@@ -4,10 +4,11 @@ import 'package:final_project/app/constants/enum.dart';
 import 'package:final_project/presentation/resources/color_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
-import 'package:story_view/controller/story_controller.dart';
-import 'package:story_view/utils.dart';
-import 'package:story_view/widgets/story_view.dart';
+
+import 'package:story_view/story_view.dart';
 import '../../models/story_model.dart';
+
+
 
 class StatusFull extends StatelessWidget {
   const StatusFull({super.key});
@@ -49,8 +50,8 @@ class StatusFull extends StatelessWidget {
       body: FutureBuilder(
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return const StoryViewDelegate(
-              // stories: snapshot.data, 
+            return StoryViewDelegate(
+              stories: snapshot.data,
             );
           }
 
@@ -66,16 +67,15 @@ class StatusFull extends StatelessWidget {
             ),
           );
         },
-        // future: Repository.getWhatsappStories(),
+        future: getWhatsappStories(),
       ),
     );
   }
 }
 
 class StoryViewDelegate extends StatefulWidget {
-  const StoryViewDelegate({super.key, this.stories});
-
   final List<WhatsappStory>? stories;
+  const StoryViewDelegate({super.key, this.stories});
 
   @override
   StoryViewDelegateState createState() => StoryViewDelegateState();
@@ -92,13 +92,15 @@ class StoryViewDelegateState extends State<StoryViewDelegate> {
     super.initState();
     for (var story in widget.stories!) {
       if (story.mediaType == MediaType.text) {
-        storyItems.add(StoryItem.text(
-          title: story.caption!,
-          backgroundColor: ColorManager.KTextColor,
-          duration: Duration(
-            milliseconds: (story.duration! * 1000).toInt(),
+        storyItems.add(
+          StoryItem.text(
+            title: story.caption!,
+            backgroundColor: ColorManager.KTextColor,
+            duration: Duration(
+              milliseconds: (story.duration! * 1000).toInt(),
+            ),
           ),
-        ));
+        );
       }
 
       if (story.mediaType == MediaType.image) {
@@ -129,7 +131,7 @@ class StoryViewDelegateState extends State<StoryViewDelegate> {
     when = widget.stories![0].when!;
   }
 
-  Widget _buildProfileView(){
+  Widget _buildProfileView() {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -166,12 +168,10 @@ class StoryViewDelegateState extends State<StoryViewDelegate> {
   }
 
   @override
-  void dispose(){
+  void dispose() {
     controller.dispose();
     super.dispose();
   }
-
-
 
   @override
   Widget build(BuildContext context) {

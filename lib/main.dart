@@ -1,5 +1,5 @@
-
 import 'package:final_project/presentation/resources/routes_manager.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -29,9 +29,7 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: RouteGenerator.getRoute,
       // navigatorKey: navigatorKey,
       initialRoute: Routes.initialScreenRoute,
-      // home: const ProfileDetails(),
+      // home: const TestImg(),
     );
   }
 }
-
-

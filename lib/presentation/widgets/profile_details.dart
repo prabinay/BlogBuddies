@@ -2,6 +2,7 @@ import 'package:final_project/presentation/resources/assets_manager.dart';
 import 'package:final_project/presentation/resources/color_manager.dart';
 import 'package:final_project/presentation/resources/strings_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ProfileDetails extends StatelessWidget {
   const ProfileDetails({Key? key}) : super(key: key);
@@ -37,7 +38,7 @@ class ProfileDetails extends StatelessWidget {
                 // ignore: prefer_const_constructors
                 Text(
                   AppStrings.profileDetails,
-                  style: const TextStyle(
+                  style: GoogleFonts.lato(
                       fontSize: 28, fontWeight: FontWeight.bold),
                 ),
 

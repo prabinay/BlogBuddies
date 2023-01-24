@@ -2,7 +2,6 @@ import 'package:final_project/presentation/home/home_page.dart';
 import 'package:final_project/presentation/resources/strings_manager.dart';
 import 'package:final_project/presentation/sign_in/components/sign_in.dart';
 
-
 import 'package:flutter/material.dart';
 
 import '../main_page/main_page.dart';
@@ -32,15 +31,15 @@ class RouteGenerator {
       case Routes.signUp:
         return MaterialPageRoute(builder: (_) => const SignUpPage());
       case Routes.homePage:
-        return MaterialPageRoute(builder: (_) =>  HomePage());
-        case Routes.mainPage:
+        return MaterialPageRoute(builder: (_) => HomePage());
+      case Routes.mainPage:
         return MaterialPageRoute(builder: (_) => const MainPage());
       // case Routes.completeProfileScreen:
       //   return MaterialPageRoute(builder: (_) => const CompleteProfileScreen());
       // case Routes.loginSuccessScreen:
       //   return MaterialPageRoute(builder: (_) => const LoginSuccessScreen());
       // case Routes.home:
-        // return MaterialPageRoute(builder: (_) => const HomeScreen());
+      // return MaterialPageRoute(builder: (_) => const HomeScreen());
 
       default:
         return unDefinedRoute();

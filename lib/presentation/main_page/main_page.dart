@@ -18,6 +18,7 @@
 // }
 
 import 'package:final_project/presentation/home/home_page.dart';
+import 'package:final_project/presentation/resources/color_manager.dart';
 import 'package:final_project/presentation/widgets/profile_details.dart';
 import 'package:flutter/material.dart';
 
@@ -60,14 +61,14 @@ class MainPageState extends State<MainPage> {
                 label: "",
                 backgroundColor: Colors.green),
             BottomNavigationBarItem(
-                icon: Icon(
+                icon: Icon(   
                   Icons.person,
                 ),
                 label: "",
                 backgroundColor: Colors.yellow),
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.search,
+                Icons.add_box_outlined,
               ),
               label: "",
               backgroundColor: Colors.blue,
@@ -94,7 +95,7 @@ class MainPageState extends State<MainPage> {
           unselectedFontSize: 14,
           onTap: _onItemTapped,
           currentIndex: _selectedIndex,
-          selectedItemColor: Colors.orange,
+          selectedItemColor: ColorManager.KPrimaryColor,
           iconSize: 26,
           elevation: 5),
     );
