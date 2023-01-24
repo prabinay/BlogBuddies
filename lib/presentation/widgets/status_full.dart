@@ -49,7 +49,7 @@ class StatusFull extends StatelessWidget {
       body: FutureBuilder(
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return StoryViewDelegate(
+            return const StoryViewDelegate(
               // stories: snapshot.data, 
             );
           }
@@ -87,6 +87,7 @@ class StoryViewDelegateState extends State<StoryViewDelegate> {
 
   String when = "";
 
+  @override
   void initState() {
     super.initState();
     for (var story in widget.stories!) {

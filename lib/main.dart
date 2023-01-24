@@ -1,9 +1,5 @@
 
 import 'package:final_project/presentation/resources/routes_manager.dart';
-import 'package:final_project/presentation/sign_in/components/sign_in.dart';
-import 'package:final_project/presentation/sign_up/components/sign_up.dart';
-import 'package:final_project/presentation/sign_up/components/sign_up_body.dart';
-import 'package:final_project/presentation/widgets/profile_details.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -30,10 +26,10 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      // onGenerateRoute: RouteGenerator.getRoute,
+      onGenerateRoute: RouteGenerator.getRoute,
       // navigatorKey: navigatorKey,
-      // initialRoute: Routes.initialScreenRoute,
-      home: const ProfileDetails(),
+      initialRoute: Routes.initialScreenRoute,
+      // home: const ProfileDetails(),
     );
   }
 }

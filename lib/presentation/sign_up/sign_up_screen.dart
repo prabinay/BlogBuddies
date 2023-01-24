@@ -1,7 +1,4 @@
-import 'package:final_project/presentation/sign_up/components/sign_up_body.dart';
-import 'package:flutter/material.dart';
 
-import '../resources/strings_manager.dart';
 
 // class SignUpPage extends StatelessWidget {
 //   const SignUpPage({super.key});

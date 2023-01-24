@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../models/homepage.dart';
+
 class FeedUI extends StatelessWidget {
-  const FeedUI({super.key});
+    final PostModel? post;
+
+  const FeedUI({super.key, this.post});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +20,7 @@ class FeedUI extends StatelessWidget {
                 elevation: 10,
                 borderRadius: BorderRadius.circular(140),
                 child: Container(
-                  decoration: new BoxDecoration(
+                  decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(140)),
                   height: 58,
@@ -32,9 +36,9 @@ class FeedUI extends StatelessWidget {
                           decoration: BoxDecoration(
                               border: Border.all(color: Colors.white, width: 2),
                               borderRadius: BorderRadius.circular(140)),
-                          child: const CircleAvatar(
+                          child:  CircleAvatar(
                             backgroundImage: NetworkImage(
-                              'https://img.freepik.com/free-photo/portrait-dark-skinned-cheerful-woman-with-curly-hair-touches-chin-gently-laughs-happily-enjoys-day-off-feels-happy-enthusiastic-hears-something-positive-wears-casual-blue-turtleneck_273609-43443.jpg?w=2000',
+                             post!.img?? 'https://img.freepik.com/free-photo/portrait-dark-skinned-cheerful-woman-with-curly-hair-touches-chin-gently-laughs-happily-enjoys-day-off-feels-happy-enthusiastic-hears-something-positive-wears-casual-blue-turtleneck_273609-43443.jpg?w=2000',
                             ),
                           )),
                     ],
@@ -46,7 +50,7 @@ class FeedUI extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 15.0, top: 13),
                 child: Text(
-                  'Sound Byte',
+                 post!.name?? 'Sound Byte',
                   style: GoogleFonts.lato(
                       color: Colors.grey[700],
                       fontSize: 16,

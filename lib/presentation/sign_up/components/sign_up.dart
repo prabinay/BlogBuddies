@@ -1,8 +1,6 @@
 import 'package:final_project/presentation/resources/color_manager.dart';
 import 'package:final_project/presentation/resources/strings_manager.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 import '../../resources/routes_manager.dart';
 
@@ -28,7 +26,7 @@ class _SignUpPageState extends State<SignUpPage> {
             Padding(
               padding: const EdgeInsets.only(top: 60.0),
               child: Center(
-                child: Container(
+                child: SizedBox(
                   // width: 250,
                   height: 50,
                   /*decoration: BoxDecoration(
@@ -52,7 +50,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   left: 15.0, right: 15.0, top: 5, bottom: 20),
               // padding: EdgeInsets.symmetric(horizontal: 15),
               child: Center(
-                child: Container(
+                child: SizedBox(
                   // width: 250,
                   height: 50,
                   child: Text(
@@ -110,16 +108,16 @@ class _SignUpPageState extends State<SignUpPage> {
             ),
 
             Padding(
-                padding: EdgeInsets.only(
+                padding: const EdgeInsets.only(
                     left: 15.0, right: 15.0, top: 15, bottom: 0),
                 //padding: EdgeInsets.symmetric(horizontal: 15),
                 child: TextField(
                   obscureText: _isObscure,
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(),
+                      border: const OutlineInputBorder(),
                       labelText: AppStrings.password,
                       hintText: AppStrings.enterPassword,
-                      prefixIcon: Icon(Icons.password),
+                      prefixIcon: const Icon(Icons.password),
                       suffixIcon: IconButton(
                         icon: Icon(_isObscure
                             ? Icons.visibility
@@ -139,10 +137,10 @@ class _SignUpPageState extends State<SignUpPage> {
                 child: TextField(
                   obscureText: _isObscure,
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(),
+                    border: const OutlineInputBorder(),
                     labelText: AppStrings.confirmPassword,
                     hintText: AppStrings.reenterYourPassword,
-                    prefixIcon: Icon(Icons.password_sharp),
+                    prefixIcon: const Icon(Icons.password_sharp),
                     suffixIcon: IconButton(
                       icon: Icon(
                           _isObscure ? Icons.visibility : Icons.visibility_off),

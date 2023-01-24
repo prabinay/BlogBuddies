@@ -1,3 +1,4 @@
+
 import 'package:final_project/presentation/resources/color_manager.dart';
 import 'package:final_project/presentation/widgets/status_full.dart';
 import 'package:flutter/material.dart';
@@ -8,9 +9,7 @@ class Status extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: ColorManager.KSecondaryColor,
-      body: Row(
+    return  Row(
         children: [
           Column(
             children: [
@@ -187,8 +186,10 @@ class Status extends StatelessWidget {
               ),
             ],
           ),
+         
         ],
-      ),
-    );
+      );
   }
 }
+
+

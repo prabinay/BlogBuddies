@@ -83,10 +83,10 @@ class _LoginPageState extends State<LoginPage> {
                   borderRadius: BorderRadius.circular(20)),
               child: Center(
                 child: OutlinedButton(
-                  onPressed: () async {
-                    passBackData =
-                        await Navigator.pushNamed(context, Routes.homePage)
-                            as String;
+                  onPressed: ()  {
+                   
+                         Navigator.pushNamed(context, Routes.mainPage);
+                         
                   },
                   child: const Text(
                     AppStrings.logIn,

@@ -1,9 +1,11 @@
+import 'package:final_project/presentation/home/home_page.dart';
 import 'package:final_project/presentation/resources/strings_manager.dart';
 import 'package:final_project/presentation/sign_in/components/sign_in.dart';
-import 'package:final_project/presentation/widgets/status.dart';
+
 
 import 'package:flutter/material.dart';
 
+import '../main_page/main_page.dart';
 import '../sign_up/components/sign_up.dart';
 
 class Routes {
@@ -17,6 +19,7 @@ class Routes {
   static const String profileScreen = "/profileScreen";
   static const String cart = "/cart";
   static const String homePage = "/homePage";
+  static const String mainPage = "/mainPage";
 }
 
 class RouteGenerator {
@@ -29,7 +32,9 @@ class RouteGenerator {
       case Routes.signUp:
         return MaterialPageRoute(builder: (_) => const SignUpPage());
       case Routes.homePage:
-        return MaterialPageRoute(builder: (_) => const Status());
+        return MaterialPageRoute(builder: (_) =>  HomePage());
+        case Routes.mainPage:
+        return MaterialPageRoute(builder: (_) => const MainPage());
       // case Routes.completeProfileScreen:
       //   return MaterialPageRoute(builder: (_) => const CompleteProfileScreen());
       // case Routes.loginSuccessScreen:
