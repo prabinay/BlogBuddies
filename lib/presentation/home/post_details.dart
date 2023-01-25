@@ -1,93 +1,191 @@
+import 'dart:ui';
+
 import 'package:final_project/models/home_page.dart';
+import 'package:final_project/presentation/resources/color_manager.dart';
 import 'package:flutter/material.dart';
+// import 'package:image_picker/image_picker.dart';
 
 class PostDetails extends StatelessWidget {
+  // PickedFile _image;
+  // final ImagePicker picker = ImagePicker();
+
   final PostModel? post;
   const PostDetails({super.key, this.post});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: <Widget>[
-          Container(
-              padding: const EdgeInsets.only(left: 10.0),
-              height: MediaQuery.of(context).size.height * 0.5,
+    return SafeArea(
+        child: Scaffold(
+            body: Stack(
+      children: [
+        SizedBox(
+          width: double.infinity,
+          child: Image(
+              image: NetworkImage(
+            post?.img ??
+                'https://img.freepik.com/free-photo/portrait-dark-skinned-cheerful-woman-with-curly-hair-touches-chin-gently-laughs-happily-enjoys-day-off-feels-happy-enthusiastic-hears-something-positive-wears-casual-blue-turtleneck_273609-43443.jpg?w=2000',
+          )),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Container(
+              clipBehavior: Clip.hardEdge,
+              height: 55,
+              width: 55,
               decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage(
-                    post!.img ??
-                        "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=930&q=80",
+                borderRadius: BorderRadius.circular(25),
+              ),
+              child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                child: Container(
+                  height: 55,
+                  width: 55,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25),
                   ),
-                  fit: BoxFit.cover,
+                  child: const Icon(
+                    Icons.arrow_back_ios,
+                    size: 20,
+                    color: Colors.white,
+                  ),
                 ),
-              )),
-          Container(
-            height: MediaQuery.of(context).size.height * 0.5,
-            padding: const EdgeInsets.all(40.0),
-            width: MediaQuery.of(context).size.width,
-            decoration:
-                const BoxDecoration(color: Color.fromARGB(224, 206, 210, 221)),
-            child: Center(
+              ),
+            ),
+          ),
+        ),
+        scroll(),
+      ],
+    )));
+  }
+
+  scroll() {
+    return DraggableScrollableSheet(
+        initialChildSize: 0.7,
+        maxChildSize: 1.0,
+        minChildSize: 0.6,
+        builder: (context, scrollController) {
+          return Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            clipBehavior: Clip.hardEdge,
+            decoration: const BoxDecoration(
+              color: Colors.grey,
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(25), topRight: Radius.circular(25)),
+            ),
+            child: SingleChildScrollView(
+              controller: scrollController,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  const SizedBox(height: 120.0),
-                  const Icon(
-                    Icons.portrait,
-                    color: Colors.white,
-                    size: 60.0,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10, bottom: 15),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          height: 5,
+                          width: 35,
+                          color: Colors.black12,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Text(
+                    post?.name ?? "Title",
+                    style: const TextStyle(
+                      fontSize: 32,
+                    ),
                   ),
                   const SizedBox(
-                    width: 90.0,
-                    child: Divider(color: Colors.red),
+                    height: 10,
                   ),
-                  const SizedBox(height: 10.0),
-                  Text(
-                    post!.name?? "Name",
-                    style: const TextStyle(color: Colors.white, fontSize: 45.0),
+                  const Text(
+                    "1 hr",
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
                   ),
-                  const SizedBox(height: 30.0),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Row(
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //       builder: (context) =>
+                          //           ProfileTap(showFollowBottomInProfile: true),
+                          //     ));
+                        },
+                        child: CircleAvatar(
+                          radius: 25,
+                          child: Image(
+                              image: NetworkImage(
+                            post?.img ??
+                                'https://img.freepik.com/free-photo/portrait-dark-skinned-cheerful-woman-with-curly-hair-touches-chin-gently-laughs-happily-enjoys-day-off-feels-happy-enthusiastic-hears-something-positive-wears-casual-blue-turtleneck_273609-43443.jpg?w=2000',
+                          )),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      const Text("Elena Shelby",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          )
+                          // .copyWith(color: mainText),
+                          ),
+                      const Spacer(),
+                      const CircleAvatar(
+                        radius: 25,
+                        // backgroundColor: primary,
+                        child: Icon(
+                          Icons.favorite_outline,
+                          color: Colors.white,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      const Text("273 Likes",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          )
+                          // .copyWith(color: mainText),
+                          ),
+                    ],
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                    child: Divider(
+                      height: 4,
+                    ),
+                  ),
+                  const Text("Description",
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      )),
+                  const Text(
+                    '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.normal,
+                    ),
+                    textAlign: TextAlign.justify,
+                  ),
                 ],
               ),
             ),
-          ),
-          Positioned(
-            left: 8.0,
-            top: 60.0,
-            child: InkWell(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: const Icon(Icons.arrow_back, color: Colors.white),
-            ),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width,
-            padding: const EdgeInsets.all(40.0),
-            child: Center(
-              child: Column(
-                children: <Widget>[
-                  //         Text(
-                  //   post!.description!,
-                  //   textAlign: TextAlign.justify,
-                  //   style: const TextStyle(fontSize: 18.0),
-                  // ),
-                  Container(
-                      padding: const EdgeInsets.symmetric(vertical: 16.0),
-                      width: MediaQuery.of(context).size.width,
-                      child: MaterialButton(
-                        onPressed: () => {},
-                        color: Colors.blue,
-                        child: const Text("BUY THIS ART",
-                            style: TextStyle(color: Colors.white)),
-                      ))
-                ],
-              ),
-            ),
-          )
-        ],
-      ),
-    );
+          );
+        });
   }
 }

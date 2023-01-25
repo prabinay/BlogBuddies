@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../models/home_page.dart';
+import '../resources/routes_manager.dart';
 
 class FeedUI extends StatelessWidget {
   final PostModel? post;
@@ -74,16 +75,21 @@ class FeedUI extends StatelessWidget {
             ]),
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(left: 20.0, right: 20, top: 20),
-          child: Text(
-            'Was great meeting up with Anna Ferguson and Dave Bishop at the breakfast talk!',
-            style: GoogleFonts.lato(
-                color: ColorManager.KTextColor,
-                fontSize: 15,
-                letterSpacing: 1,
-                fontWeight: FontWeight.w300),
-            textAlign: TextAlign.justify,
+        OutlinedButton(
+          onPressed: () {
+            Navigator.pushNamed(context, Routes.detailsPage);
+          },
+          child: Padding(
+            padding: const EdgeInsets.only(left: 20.0, right: 20, top: 20),
+            child: Text(
+              'Was great meeting up with Anna Ferguson and Dave Bishop at the breakfast talk!',
+              style: GoogleFonts.lato(
+                  color: ColorManager.KTextColor,
+                  fontSize: 15,
+                  letterSpacing: 1,
+                  fontWeight: FontWeight.w300),
+              textAlign: TextAlign.justify,
+            ),
           ),
         ),
         Padding(

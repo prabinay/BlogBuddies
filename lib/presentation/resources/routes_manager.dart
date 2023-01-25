@@ -1,4 +1,5 @@
 import 'package:final_project/presentation/home/home_page.dart';
+import 'package:final_project/presentation/home/post_details.dart';
 import 'package:final_project/presentation/resources/strings_manager.dart';
 import 'package:final_project/presentation/sign_in/components/sign_in.dart';
 
@@ -19,6 +20,7 @@ class Routes {
   static const String cart = "/cart";
   static const String homePage = "/homePage";
   static const String mainPage = "/mainPage";
+  static const String detailsPage = "/detailsPage";
 }
 
 class RouteGenerator {
@@ -34,6 +36,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => HomePage());
       case Routes.mainPage:
         return MaterialPageRoute(builder: (_) => const MainPage());
+        case Routes.detailsPage:
+        return MaterialPageRoute(builder: (_) => const PostDetails());
       // case Routes.completeProfileScreen:
       //   return MaterialPageRoute(builder: (_) => const CompleteProfileScreen());
       // case Routes.loginSuccessScreen:
