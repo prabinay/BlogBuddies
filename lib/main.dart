@@ -1,4 +1,5 @@
-import 'package:final_project/presentation/resources/routes_manager.dart';
+import 'package:final_project/presentation/home/post_details.dart';
+ 
 
 import 'package:flutter/material.dart';
 
@@ -26,10 +27,10 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      onGenerateRoute: RouteGenerator.getRoute,
+      // onGenerateRoute: RouteGenerator.getRoute,
       // navigatorKey: navigatorKey,
-      initialRoute: Routes.initialScreenRoute,
-      // home: const TestImg(),
+      // initialRoute: Routes.initialScreenRoute,
+      home: const PostDetails(),
     );
   }
 }

@@ -22,6 +22,8 @@ import 'package:final_project/presentation/resources/color_manager.dart';
 import 'package:final_project/presentation/widgets/profile_details.dart';
 import 'package:flutter/material.dart';
 
+import '../add_blog/add_blog.dart';
+
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
 
@@ -34,7 +36,7 @@ class MainPageState extends State<MainPage> {
   final List<Widget> _widgetOptions = <Widget>[
     HomePage(),
     const ProfileDetails(),
-    const SizedBox(),
+    const AddNewBlog(),
     const SizedBox(),
     const SizedBox(),
   ];

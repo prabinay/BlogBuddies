@@ -70,4 +70,11 @@ class AppStrings {
   static const String notifications = "Notifications";
   static const String today = "Today";
   static const String yesterday = "Yesterday";
+
+  // Add a blog
+  static const String postBlog = "Post a blog" ;
+  static const String publish = "Publish" ;
+  static const String title = "Add a Title" ;
+  static const String content = "Tell your Story..." ;
+
 }
