@@ -1,9 +1,12 @@
 import 'dart:ui';
 
+import 'package:final_project/presentation/widgets/status.dart';
 import 'package:final_project/models/home_page.dart';
 import 'package:final_project/presentation/resources/color_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:readmore/readmore.dart';
 // import 'package:image_picker/image_picker.dart';
+import 'package:final_project/presentation/home/home_page.dart';
 
 class PostDetails extends StatelessWidget {
   // PickedFile _image;
@@ -72,7 +75,7 @@ class PostDetails extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             clipBehavior: Clip.hardEdge,
             decoration: const BoxDecoration(
-              color: Colors.grey,
+              color: Colors.white,
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(25), topRight: Radius.circular(25)),
             ),
@@ -95,7 +98,7 @@ class PostDetails extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    post?.name ?? "Title",
+                    post!.name ?? "Title",
                     style: const TextStyle(
                       fontSize: 32,
                     ),
@@ -103,8 +106,8 @@ class PostDetails extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  const Text(
-                    "1 hr",
+                  Text(
+                    post!.time ??"1 hr",
                     style: TextStyle(
                       fontSize: 18,
                     ),
@@ -125,11 +128,22 @@ class PostDetails extends StatelessWidget {
                         },
                         child: CircleAvatar(
                           radius: 25,
-                          child: Image(
-                              image: NetworkImage(
-                            post?.img ??
-                                'https://img.freepik.com/free-photo/portrait-dark-skinned-cheerful-woman-with-curly-hair-touches-chin-gently-laughs-happily-enjoys-day-off-feels-happy-enthusiastic-hears-something-positive-wears-casual-blue-turtleneck_273609-43443.jpg?w=2000',
-                          )),
+                          child: Container(
+                            height: 78,
+                            width: 74,
+                            margin: const EdgeInsets.only(
+                                left: 0.0, right: 0, top: 0, bottom: 0),
+                            padding: const EdgeInsets.all(0),
+                            decoration: BoxDecoration(
+                                border:
+                                    Border.all(color: Colors.blue, width: 2),
+                                borderRadius: BorderRadius.circular(150)),
+                            child: CircleAvatar(
+                                backgroundImage: NetworkImage(
+                              post!.avatar ??
+                                  'https://img.freepik.com/free-photo/portrait-dark-skinned-cheerful-woman-with-curly-hair-touches-chin-gently-laughs-happily-enjoys-day-off-feels-happy-enthusiastic-hears-something-positive-wears-casual-blue-turtleneck_273609-43443.jpg?w=2000',
+                            )),
+                          ),
                         ),
                       ),
                       const SizedBox(
@@ -154,7 +168,8 @@ class PostDetails extends StatelessWidget {
                       const SizedBox(
                         width: 5,
                       ),
-                      const Text("273 Likes",
+                      Text(
+                        post!.like??"273 Likes",
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -171,11 +186,16 @@ class PostDetails extends StatelessWidget {
                   ),
                   const Text("Description",
                       style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 25,
                         fontWeight: FontWeight.bold,
                       )),
-                  const Text(
+                  const ReadMoreText(
                     '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
+                    trimLines: 5,
+                    colorClickableText: Colors.blue,
+                    trimMode: TrimMode.Line,
+                    trimCollapsedText: 'Show more',
+                    trimExpandedText: 'Show less',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.normal,

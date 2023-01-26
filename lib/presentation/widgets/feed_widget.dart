@@ -1,7 +1,9 @@
+import 'package:final_project/presentation/home/post_details.dart';
 import 'package:final_project/presentation/resources/assets_manager.dart';
 import 'package:final_project/presentation/resources/color_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:readmore/readmore.dart';
 
 import '../../models/home_page.dart';
 import '../resources/routes_manager.dart';
@@ -41,7 +43,7 @@ class FeedUI extends StatelessWidget {
                               borderRadius: BorderRadius.circular(140)),
                           child: CircleAvatar(
                               backgroundImage: NetworkImage(
-                            post!.img ??
+                            post!.avatar??
                                 'https://img.freepik.com/free-photo/portrait-dark-skinned-cheerful-woman-with-curly-hair-touches-chin-gently-laughs-happily-enjoys-day-off-feels-happy-enthusiastic-hears-something-positive-wears-casual-blue-turtleneck_273609-43443.jpg?w=2000',
                           ))),
                     ],
@@ -64,7 +66,7 @@ class FeedUI extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 16.0),
                 child: Text(
-                  '1 hr',
+                  post!.time??'1 hr',
                   style: GoogleFonts.lato(
                       color: Colors.grey[500],
                       fontSize: 15,
@@ -75,14 +77,25 @@ class FeedUI extends StatelessWidget {
             ]),
           ],
         ),
-        OutlinedButton(
-          onPressed: () {
-            Navigator.pushNamed(context, Routes.detailsPage);
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: ((context) => PostDetails(
+                          post: post!,
+                        ))));
           },
           child: Padding(
             padding: const EdgeInsets.only(left: 20.0, right: 20, top: 20),
-            child: Text(
-              'Was great meeting up with Anna Ferguson and Dave Bishop at the breakfast talk!',
+            child: ReadMoreText(
+              trimLines: 2,
+              colorClickableText: ColorManager.KPrimaryColor,
+              trimMode: TrimMode.Line,
+              trimCollapsedText: 'Show more',
+              trimExpandedText: 'Show less',
+              post!.description ??
+                  'Was great meeting up with Anna Ferguson and Dave Bishop at the breakfast talk!',
               style: GoogleFonts.lato(
                   color: ColorManager.KTextColor,
                   fontSize: 15,
@@ -120,7 +133,7 @@ class FeedUI extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    '45',
+                    post!.like??'45',
                     style: GoogleFonts.averageSans(
                         color: Colors.grey[700],
                         fontSize: 20,
@@ -142,7 +155,7 @@ class FeedUI extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    '45',
+                    post!.comment??'44',
                     style: GoogleFonts.averageSans(
                         color: ColorManager.KTextColor,
                         fontSize: 20,

@@ -29,7 +29,7 @@ class Status extends StatelessWidget {
                         borderRadius: BorderRadius.circular(140)),
                     child: const CircleAvatar(
                       backgroundImage: NetworkImage(
-                        'https://cdn.now.howstuffworks.com/media-content/0b7f4e9b-f59c-4024-9f06-b3dc12850ab7-1920-1080.jpg',
+                        'https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8&w=1000&q=80',
                       ),
                     )),
                 Positioned(
