@@ -25,7 +25,8 @@ class Status extends StatelessWidget {
                     padding: const EdgeInsets.all(2.0),
                     decoration: BoxDecoration(
                         border: Border.all(
-                            color: ColorManager.KPrimaryColor, width: 2),
+                            color: ColorManager.KPrimaryColor, width: 
+                             2),
                         borderRadius: BorderRadius.circular(140)),
                     child: const CircleAvatar(
                       backgroundImage: NetworkImage(

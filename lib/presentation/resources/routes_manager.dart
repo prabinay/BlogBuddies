@@ -29,7 +29,7 @@ class RouteGenerator {
   ) {
     switch (routeSettings.name) {
       case Routes.initialScreenRoute:
-        return MaterialPageRoute(builder: (_) => const LoginPage());
+        return MaterialPageRoute(builder: (_) =>  LoginPage());
       case Routes.signUp:
         return MaterialPageRoute(builder: (_) => const SignUpPage());
       case Routes.homePage:
