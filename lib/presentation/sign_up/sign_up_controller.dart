@@ -56,7 +56,6 @@ class SignUpController extends GetxController {
           textColor: Colors.white,
           fontSize: 16.0);
     } else {
-
       Get.offAllNamed(Routes.signIn);
     }
   }

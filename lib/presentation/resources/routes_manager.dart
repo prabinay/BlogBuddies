@@ -2,6 +2,7 @@ import 'package:final_project/presentation/home/home_page.dart';
 import 'package:final_project/presentation/home/post_details.dart';
 import 'package:final_project/presentation/resources/strings_manager.dart';
 import 'package:final_project/presentation/sign_in/components/sign_in.dart';
+import 'package:final_project/presentation/widgets/feed_widget.dart';
 
 import 'package:flutter/material.dart';
 
@@ -33,7 +34,7 @@ class RouteGenerator {
       case Routes.signUp:
         return MaterialPageRoute(builder: (_) => const SignUpPage());
       case Routes.homePage:
-        return MaterialPageRoute(builder: (_) => HomePage());
+        return MaterialPageRoute(builder: (_) => FeedUI());
       case Routes.mainPage:
         return MaterialPageRoute(builder: (_) => const MainPage());
       case Routes.detailsPage:
