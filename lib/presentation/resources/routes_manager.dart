@@ -29,15 +29,17 @@ class RouteGenerator {
   ) {
     switch (routeSettings.name) {
       case Routes.initialScreenRoute:
-        return MaterialPageRoute(builder: (_) =>  LoginPage());
+        return MaterialPageRoute(builder: (_) => LoginPage());
       case Routes.signUp:
         return MaterialPageRoute(builder: (_) => const SignUpPage());
       case Routes.homePage:
         return MaterialPageRoute(builder: (_) => HomePage());
       case Routes.mainPage:
         return MaterialPageRoute(builder: (_) => const MainPage());
-        case Routes.detailsPage:
+      case Routes.detailsPage:
         return MaterialPageRoute(builder: (_) => const PostDetails());
+      case Routes.signIn:
+        return MaterialPageRoute(builder: (_) => LoginPage());
       // case Routes.completeProfileScreen:
       //   return MaterialPageRoute(builder: (_) => const CompleteProfileScreen());
       // case Routes.loginSuccessScreen:
