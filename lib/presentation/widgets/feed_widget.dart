@@ -102,7 +102,8 @@ class FeedUI extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: ((context) => PostDetails())));
+                                  builder: ((context) => PostDetails()))
+                                  );
                         },
                         child: Padding(
                           padding: const EdgeInsets.only(
