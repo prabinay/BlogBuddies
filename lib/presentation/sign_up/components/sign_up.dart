@@ -74,7 +74,7 @@ class _SignUpPageState extends State<SignUpPage> {
               Padding(
                 // padding: const EdgeInsets.only(
                 //     left: 15.0, right: 15.0, top: 20, bottom: 0),
-                padding: EdgeInsets.symmetric(horizontal: 15),
+                padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: Column(
                   children: [
                     TextFormField(
@@ -159,7 +159,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                     validator: (value) {
                       _signUpController.checkPass = value!;
-                      if (value == null || value.isEmpty) {
+                      if (value.isEmpty) {
                         return 'Please enter password';
                       }
                       return null;
@@ -250,9 +250,9 @@ class _SignUpPageState extends State<SignUpPage> {
 
 String? validateMobile(String value) {
 // Indian Mobile number are of 10 digit only
-  if (value.length != 10)
+  if (value.length != 10) {
     return 'Mobile Number must be of 10 digit';
-  else {
+  } else {
     return null;
   }
 }
