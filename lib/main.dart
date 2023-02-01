@@ -1,6 +1,6 @@
-import 'package:final_project/presentation/home/post_details.dart';
+ 
 import 'package:final_project/presentation/resources/routes_manager.dart';
-import 'package:final_project/presentation/widgets/feed_widget.dart';
+ 
  
 
 import 'package:flutter/material.dart';

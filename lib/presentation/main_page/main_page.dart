@@ -17,7 +17,7 @@
 //   }
 // }
 
-import 'package:final_project/presentation/home/home_page.dart';
+ 
 import 'package:final_project/presentation/resources/color_manager.dart';
 import 'package:final_project/presentation/widgets/feed_widget.dart';
 import 'package:final_project/presentation/widgets/profile_details.dart';
@@ -35,6 +35,7 @@ class MainPage extends StatefulWidget {
 class MainPageState extends State<MainPage> {
   int _selectedIndex = 0;
   final List<Widget> _widgetOptions = <Widget>[
+ 
     FeedUI(),
     const ProfileDetails(),
     const AddNewBlog(),

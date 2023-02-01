@@ -1,4 +1,3 @@
-import 'package:final_project/presentation/home/home_page.dart';
 import 'package:final_project/presentation/home/post_details.dart';
 import 'package:final_project/presentation/resources/strings_manager.dart';
 import 'package:final_project/presentation/sign_in/components/sign_in.dart';
@@ -38,7 +37,7 @@ class RouteGenerator {
       case Routes.mainPage:
         return MaterialPageRoute(builder: (_) => const MainPage());
       case Routes.detailsPage:
-        return MaterialPageRoute(builder: (_) => const PostDetails());
+        return MaterialPageRoute(builder: (_) => PostDetails());
       case Routes.signIn:
         return MaterialPageRoute(builder: (_) => LoginPage());
       // case Routes.completeProfileScreen:

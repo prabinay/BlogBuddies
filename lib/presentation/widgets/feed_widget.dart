@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:readmore/readmore.dart';
 
+ 
 
 class FeedUI extends StatelessWidget {
   // final PostModel? post;
@@ -30,6 +31,7 @@ class FeedUI extends StatelessWidget {
                     children: [
                       Row(
                         children: [
+                     
                           Padding(
                             padding: const EdgeInsets.only(left: 18.0, top: 20),
                             child: Material(
@@ -98,12 +100,11 @@ class FeedUI extends StatelessWidget {
                         ],
                       ),
                       GestureDetector(
-                        onTap: () {
+                        onTap: () {   
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: ((context) => PostDetails()))
-                                  );
+                                  builder: ((context) => PostDetails())));
                         },
                         child: Padding(
                           padding: const EdgeInsets.only(
