@@ -3,9 +3,12 @@ import 'package:final_project/presentation/home/post_details.dart';
 import 'package:final_project/presentation/resources/assets_manager.dart';
 import 'package:final_project/presentation/resources/color_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:readmore/readmore.dart';
+
+import '../../app/constants/enum.dart';
 
  
 
@@ -19,8 +22,8 @@ class FeedUI extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Obx(
-      () => _postController.loading.value
-          ? const Center(child: CircularProgressIndicator())
+      () => _postController.state == ViewState.busy
+          ? const SpinKitCircle(color: Colors.blue)
           : ListView.builder(
               itemCount: _postController.dataResponse.length,
               itemBuilder: (BuildContext context, int index) {
@@ -104,7 +107,9 @@ class FeedUI extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: ((context) => PostDetails())));
+                                  builder: ((context) => PostDetails(
+                                   post:  _postController.dataResponse[index]
+                                  ))));
                         },
                         child: Padding(
                           padding: const EdgeInsets.only(

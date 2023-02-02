@@ -1,43 +1,35 @@
-
 import 'dart:developer';
 
 import 'package:final_project/models/post.dart';
+import 'package:final_project/presentation/base_model/base_model.dart';
 
 import 'package:get/get.dart';
 
+import '../../../app/constants/enum.dart';
 import '../../../data/network/api_service_provider.dart';
 
-class PostController extends GetxController {
-  // final TextEditingController title = TextEditingController();
-  // final TextEditingController desc = TextEditingController();
-  // final TextEditingController time = TextEditingController();
-  // final TextEditingController image = TextEditingController();
-  // final TextEditingController like = TextEditingController();
+class PostController extends BaseController {
 
   final ApiServiceProvider _apiServiceProvider = ApiServiceProvider();
   List dataResponse = [].obs;
-  RxBool loading = false.obs;
+  // RxBool loading = false.obs;
 
   @override
   void onInit() {
     super.onInit();
-    // log("message");
+  log('message');
     fetchPosts();
   }
 
   void fetchPosts() async {
-
-    loading.value = true;
+    setState(ViewState.busy);
 
     List<Posts>? posts = await _apiServiceProvider.getPosts();
 
     dataResponse.assignAll(posts);
-      log("${dataResponse.length}");
-    loading.value = false;
-    // if (posts.isNotEmpty) {
-    //   postsAvailable.value = true;
-    // }
+    log("${dataResponse.length}");
+    // loading.value = false;
 
-    // setState(ViewState.retrieved);
+    setState(ViewState.retrieved);
   }
 }
